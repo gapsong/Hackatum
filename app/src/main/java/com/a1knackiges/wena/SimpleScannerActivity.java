@@ -1,11 +1,13 @@
 package com.a1knackiges.wena;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
-
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 /**
@@ -39,10 +41,20 @@ public class SimpleScannerActivity extends Activity implements ZXingScannerView.
     public void handleResult(Result rawResult) {
         // Do something with the result here
         String TAG = "Test_TAG";
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.piep);
+        if (!mp.isPlaying()) {
+            mp.start();
+        }
         Log.v(TAG, rawResult.getText()); // Prints scan results
         Log.v(TAG, rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
 
         // If you would like to resume scanning, call this method below:
-        mScannerView.resumeCameraPreview(this);
+        //mScannerView.resumeCameraPreview(this);
+
+        Intent resultIntent = new Intent();
+        String result = rawResult.getText();
+        resultIntent.putExtra("barcoderesult", result);
+        setResult(RESULT_OK, resultIntent);
+        finish();
     }
 }
