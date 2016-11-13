@@ -16,6 +16,10 @@ public class Overview extends Activity {
     ImageView imageView1;
     ImageView imageView2;
     ImageView imageView3;
+    ImageView imageView4;
+    ImageView imageView5;
+    ImageView imageView6;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +54,28 @@ public class Overview extends Activity {
                 //imageView3.setImageResource(R.drawable.scantowin);
             }
         });
+
         imageView3.setImageResource(R.drawable.scantowin);
+        imageView4 = (ImageView) findViewById(R.id.imageView4);
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Puzzle.class);
+                startActivityForResult(intent, 1);
+                //imageView3.setImageResource(R.drawable.scantowin);
+            }
+        });
+        imageView4.setImageResource(R.drawable.scantowin);
 
 
+        imageView5 = (ImageView) findViewById(R.id.imageView5);
+        imageView5.setImageResource(R.drawable.yooo);
+
+        imageView6 = (ImageView) findViewById(R.id.imageView6);
+        imageView6.setImageResource(R.drawable.yooo);
+
+        imageView = (ImageView) findViewById(R.id.imageView7);
+        imageView.setImageResource(R.drawable.yooo);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {//fügt element in einkaufsliste ein, welche man am ende sieht

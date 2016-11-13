@@ -6,6 +6,13 @@
     android:orientation="vertical"
     android:weightSum="1">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        app:srcCompat="@drawable/yooo"
+        android:layout_weight="0.14"
+        android:id="@+id/imageView7" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -29,6 +36,13 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        app:srcCompat="@drawable/yooo"
+        android:id="@+id/imageView5"
+        android:layout_weight="0.09" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -37,7 +51,7 @@
         android:layout_marginTop="20dp">
 
         <ImageView
-            android:id="@+id/imageView13"
+            android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             app:srcCompat="@drawable/scantowin"
@@ -51,5 +65,12 @@
             android:layout_weight="1" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        app:srcCompat="@drawable/yooo"
+        android:id="@+id/imageView6"
+        android:layout_weight="0.14" />
 
 </LinearLayout>
